@@ -1,0 +1,22 @@
+{
+	"name": "ixolit/dislo-sdk-http-guzzle",
+	"license": "MIT",
+	"provide": {
+		"ixolit/dislo-sdk-http": "1.0.0"
+	},
+	"require": {
+		"ixolit/dislo-sdk": "*",
+		"guzzlehttp/guzzle": "^6.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Ixolit\\Dislo\\HTTP\\Guzzle\\": "./src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Ixolit\\Dislo\\HTTP\\Guzzle\\": "./tests"
+		}
+	},
+	"minimum-stability": "dev"
+}
