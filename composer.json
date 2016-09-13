@@ -5,6 +5,7 @@
 		"ixolit/dislo-sdk-http": "1.0.0"
 	},
 	"require": {
+		"php": "~5.4 || ^7.0",
 		"ixolit/dislo-sdk": "*",
 		"guzzlehttp/guzzle": "^6.2"
 	},
