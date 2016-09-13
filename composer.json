@@ -1,6 +1,8 @@
 {
 	"name": "ixolit/dislo-sdk-http-guzzle",
 	"license": "MIT",
+	"type": "library",
+	"description": "PSR-7 HTTP connector for the Dislo SDK",
 	"provide": {
 		"ixolit/dislo-sdk-http": "1.0.0"
 	},
