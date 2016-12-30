@@ -4,6 +4,7 @@ namespace Ixolit\Dislo\HTTP\Guzzle;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use Ixolit\Dislo\HTTP\HTTPClientAdapter;
@@ -45,6 +46,8 @@ class GuzzleHTTPClientAdapter implements HTTPClientAdapter {
 		$client = new Client();
 		try {
 			return $client->send($request);
+		} catch (ServerException $e) {
+			return $e->getResponse();
 		} catch (ClientException $e) {
 			return $e->getResponse();
 		}
