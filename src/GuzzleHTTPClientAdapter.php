@@ -9,13 +9,13 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\RequestOptions;
 use Ixolit\Dislo\HTTP\HTTPClientAdapter;
-use Ixolit\Dislo\HTTP\HTTPClientAdapterEx;
+use Ixolit\Dislo\HTTP\HTTPClientAdapterExtra;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
 
-class GuzzleHTTPClientAdapter implements HTTPClientAdapter, HTTPClientAdapterEx {
+class GuzzleHTTPClientAdapter implements HTTPClientAdapter, HTTPClientAdapterExtra {
 
 	/**
 	 * @return RequestInterface
@@ -69,7 +69,7 @@ class GuzzleHTTPClientAdapter implements HTTPClientAdapter, HTTPClientAdapterEx 
 			$clientOptions = [];
 			foreach ($options as $key => $value) {
 				switch ($key) {
-					case HTTPClientAdapterEx::OPTION_RESPONSE_BODY_STREAM:
+					case HTTPClientAdapterExtra::OPTION_RESPONSE_BODY_STREAM:
 						$clientOptions[RequestOptions::SINK] = \GuzzleHttp\Psr7\stream_for($value);
 						break;
 				}
