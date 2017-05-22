@@ -8,7 +8,7 @@
 	},
 	"require": {
 		"php": "~5.4 || ^7.0",
-		"ixolit/dislo-sdk": "*",
+		"ixolit/dislo-sdk": "^1.0.9",
 		"guzzlehttp/guzzle": "^6.2"
 	},
 	"autoload": {
