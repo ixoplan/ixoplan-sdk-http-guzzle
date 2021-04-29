@@ -1,5 +1,5 @@
 {
-	"name": "ixoplan/ixoplan-fast-http-guzzle",
+	"name": "ixoplan/ixoplan-sdk-http-guzzle",
 	"license": "MIT",
 	"type": "library",
 	"description": "PSR-7 HTTP connector for the Ixoplan SDK",
