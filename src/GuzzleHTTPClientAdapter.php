@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
+use GuzzleHttp\Psr7\Utils;
 use GuzzleHttp\RequestOptions;
 use Ixolit\Dislo\HTTP\HTTPClientAdapter;
 use Ixolit\Dislo\HTTP\HTTPClientAdapterExtra;
@@ -37,7 +38,7 @@ class GuzzleHTTPClientAdapter implements HTTPClientAdapter, HTTPClientAdapterExt
 	 * @return StreamInterface
 	 */
 	public function createStringStream($string) {
-		return \GuzzleHttp\Psr7\stream_for($string);
+		return Utils::streamFor($string);
 	}
 
 	/**
@@ -70,7 +71,7 @@ class GuzzleHTTPClientAdapter implements HTTPClientAdapter, HTTPClientAdapterExt
 			foreach ($options as $key => $value) {
 				switch ($key) {
 					case HTTPClientAdapterExtra::OPTION_RESPONSE_BODY_STREAM:
-						$clientOptions[RequestOptions::SINK] = \GuzzleHttp\Psr7\stream_for($value);
+						$clientOptions[RequestOptions::SINK] = Utils::streamFor($value);
 						break;
 				}
 			}
